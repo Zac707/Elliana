@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb8anttpe5l7f"]
+
+[ext_resource type="Script" path="res://Player/Hitbox_Component.gd" id="1_uyjjr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11pru"]
+radius = 6.0
+
+[node name="Hitbox_Component" type="Area2D"]
+script = ExtResource("1_uyjjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_11pru")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
